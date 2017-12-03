@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" scaleShape="false" style="-fx-background-color: #BDBDBD;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <top>
+      <HBox prefHeight="72.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <JFXRadioButton fx:id="cezar" scaleShape="false" selected="true" text="Цезарь">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="cipher" />
+                     </toggleGroup>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXRadioButton>
+                  <JFXRadioButton fx:id="vigener" text="Виженер" toggleGroup="$cipher">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXRadioButton>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <JFXRadioButton fx:id="rus" selected="true" text="Русский">
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="alphablet" />
+                     </toggleGroup>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXRadioButton>
+                  <JFXRadioButton fx:id="eng" text="Английский" toggleGroup="$alphablet">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXRadioButton>
+               </children>
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+            </VBox>
+            <HBox prefHeight="72.0" prefWidth="250.0">
+               <children>
+                  <JFXTextField fx:id="keyString" alignment="CENTER" promptText="Ключ">
+                     <HBox.margin>
+                        <Insets left="10.0" top="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="hackKey" alignment="CENTER" promptText="Взломанный ключ">
+                     <HBox.margin>
+                        <Insets left="5.0" top="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+            </HBox>
+            <VBox prefHeight="72.0" prefWidth="135.0">
+               <children>
+                  <JFXButton buttonType="RAISED" onMouseClicked="#openFile" style="-fx-background-color: #FFF;" text="Открыть файл">
+                     <VBox.margin>
+                        <Insets left="5.0" top="5.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" onMouseClicked="#saveFile" style="-fx-background-color: #FFF;" text="Сохранить в файл" textAlignment="CENTER">
+                     <VBox.margin>
+                        <Insets left="5.0" top="5.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+   </top>
+   <right>
+      <JFXTextArea fx:id="encryptedText" minWidth="290.0" prefHeight="528.0" prefWidth="350.0" style="-fx-background-color: #FFF;" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets right="5.0" />
+         </BorderPane.margin>
+      </JFXTextArea>
+   </right>
+   <left>
+      <JFXTextArea fx:id="initialText" minWidth="290.0" prefHeight="528.0" prefWidth="350.0" style="-fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets left="5.0" />
+         </BorderPane.margin>
+      </JFXTextArea>
+   </left>
+   <bottom>
+      <HBox prefHeight="60.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton buttonType="RAISED" onMouseClicked="#btnEncrypt" style="-fx-background-color: #FFF;" text="Зашифровать">
+               <HBox.margin>
+                  <Insets left="130.0" top="15.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" onMouseClicked="#btnAnalys" style="-fx-background-color: #FFF;" text="Криптоанализ">
+               <HBox.margin>
+                  <Insets left="105.0" top="15.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" onMouseClicked="#btnDecrypt" style="-fx-background-color: #FFF;" text="Расшифровать">
+               <HBox.margin>
+                  <Insets left="125.0" top="15.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

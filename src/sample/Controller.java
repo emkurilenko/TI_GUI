@@ -12,36 +12,16 @@ import javafx.stage.FileChooser;
 import java.io.File;
 
 public class Controller {
-
-    @FXML
-    private JFXRadioButton cezar;
-
-    @FXML
-    private ToggleGroup cipher;
-
-    @FXML
-    private JFXRadioButton vigener;
-
-    @FXML
-    private JFXRadioButton rus;
-
-    @FXML
-    private ToggleGroup alphablet;
-
-    @FXML
-    private JFXRadioButton eng;
-
-    @FXML
-    private JFXTextField keyString;
-
-    @FXML
-    private JFXTextField hackKey;
-
-    @FXML
-    private JFXTextArea initialText;
-
-    @FXML
-    private JFXTextArea encryptedText;
+    @FXML private JFXRadioButton cezar;
+    @FXML private ToggleGroup cipher;
+    @FXML private JFXRadioButton vigener;
+    @FXML private JFXRadioButton rus;
+    @FXML private ToggleGroup alphablet;
+    @FXML private JFXRadioButton eng;
+    @FXML private JFXTextField keyString;
+    @FXML private JFXTextField hackKey;
+    @FXML private JFXTextArea initialText;
+    @FXML private JFXTextArea encryptedText;
 
     @FXML
     void btnAnalys(MouseEvent event) {

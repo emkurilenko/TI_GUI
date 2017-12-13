@@ -41,19 +41,22 @@ public class Cryptanalysis {
         final double engCountIS = 0.0644;
         encrypt = getOnlyLetters(encrypt,alph);
         int lengthPass = 0;
-        for(int i = 2; i< alph.length(); i++){
+      /*Лучше начать цикл с 2, т.к. с 1 это криптоанализ Цезаря*/
+        for(int i = 1; i< alph.length(); i++){
             StringBuilder stringBuilder = new StringBuilder();
             for (int j = 0; j < encrypt.length();j+=i)
                 stringBuilder.append(encrypt.charAt(j));
             if(alph.contains("а")){ //rus
-                if(calcIC(stringBuilder.toString(),alph)>=rusConstIS) {
+              //  System.out.println(calcIC(stringBuilder.toString(),alph));
+                if(Math.abs(calcIC(stringBuilder.toString(),alph))>=rusConstIS) {
                     lengthPass = i;
                     break;
                 }
             }
 
             if(alph.contains("a")){ //eng
-                if(calcIC(stringBuilder.toString(),alph)>=engCountIS) {
+              //  System.out.println(calcIC(stringBuilder.toString(),alph));
+                if(Math.abs(calcIC(stringBuilder.toString(),alph))>=engCountIS) {
                     lengthPass = i;
                     break;
                 }

@@ -78,5 +78,4 @@ public class VigenereCipher {
             return alp.charAt((alp.indexOf(ch)-key+alp.length())%alp.length());
         }
     }
-
 }

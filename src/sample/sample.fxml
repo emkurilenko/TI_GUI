@@ -11,7 +11,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" scaleShape="false" style="-fx-background-color: #BDBDBD;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <top>
       <HBox prefHeight="72.0" prefWidth="600.0" BorderPane.alignment="CENTER">
@@ -115,14 +114,14 @@
       </HBox>
    </top>
    <right>
-      <JFXTextArea fx:id="encryptedText" minWidth="290.0" prefHeight="528.0" prefWidth="350.0" style="-fx-background-color: #FFF;" BorderPane.alignment="CENTER">
+      <JFXTextArea fx:id="encryptedText" prefHeight="450.0" prefWidth="370.0" style="-fx-background-color: #FFF;" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets right="5.0" />
          </BorderPane.margin>
       </JFXTextArea>
    </right>
    <left>
-      <JFXTextArea fx:id="initialText" minWidth="290.0" prefHeight="528.0" prefWidth="350.0" style="-fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER">
+      <JFXTextArea fx:id="initialText" prefHeight="450.0" prefWidth="370.0" style="-fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets left="5.0" />
          </BorderPane.margin>
